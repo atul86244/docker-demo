@@ -1,0 +1,9 @@
+{
+  "id": "hub",
+  "hub_passwd": {
+    "encrypted_data": "ypH6QfSVGm5Z0KjtjiVeFKFTzfYBDrwot2vpTTL7gVg=\n",
+    "iv": "GRAo5nU4BMh9/nsIIxbCHQ==\n",
+    "version": 1,
+    "cipher": "aes-256-cbc"
+  }
+}
