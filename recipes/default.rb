@@ -29,36 +29,36 @@ docker_container 'my_redis' do
 	port '6379:6379'
 end
 
-# # Create an image
-# directory '/tmp/vizceral' do
-#   mode '0755'
-#   action :create
-#   recursive true
-# end
+# Create an image
+directory '/tmp/vizceral' do
+  mode '0755'
+  action :create
+  recursive true
+end
 
 
-# git '/tmp/vizceral' do
-#   repository 'git://github.com/Netflix/vizceral-example.git'
-#   reference 'master'
-#   action :sync
-# end
+git '/tmp/vizceral' do
+  repository 'git://github.com/Netflix/vizceral-example.git'
+  reference 'master'
+  action :sync
+end
 
-# docker_image 'atul86244/vizceral' do
-# 	action :build_if_missing
-# 	tag '1.0'
-# 	source '/tmp/vizceral/Dockerfile'
-# end
+docker_image 'atul86244/vizceral' do
+	action :build_if_missing
+	tag '1.0'
+	source '/tmp/vizceral/Dockerfile'
+end
 
-# docker_registry 'https://index.docker.io/v1/' do
-# 	username 'atul86244'
-# 	email 'atul@chef.io'
-# 	password passwd['hub_passwd']
-# end
+docker_registry 'https://index.docker.io/v1/' do
+	username 'atul86244'
+	email 'atul@chef.io'
+	password passwd['hub_passwd']
+end
 
-# # Push image
-# docker_image 'atul86244/vizceral:1.0' do
-# 	action :push
-# end
+# Push image
+docker_image 'atul86244/vizceral:1.0' do
+	action :push
+end
 
 
 docker_image 'atul86244/vizceral' do
